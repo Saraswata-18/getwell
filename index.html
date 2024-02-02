@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Well Soon!</title>
+    <style>
+        @keyframes colorchange {
+            0% {color: #00FF00;} /* fluorescent green */
+            50% {color: #FF00FF;} /* fluorescent pink */
+            100% {color: #00FF00;} /* fluorescent green */
+        }
+        body {
+            background: url('image1.jpg') no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            color: #00FF00; /* fluorescent green */
+        }
+        h1 {
+            animation: colorchange 2s infinite;
+        }
+        p {
+            font-size: 5vw;
+        }
+        button {
+            background-color: #FF00FF; /* fluorescent pink */
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            border: none;
+        }
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 30px !important;
+            }
+            button {
+                font-size: 30px !important;
+                padding: 30px 60px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 8vw;">Get Well Soon!</h1>
+    <p>missing you! taratari sustho ho !!!</p>
+    <button onclick="displayMessage()">Click Me!</button>
+    <br>
+    <img id="gif" style="display: none; margin: 20px auto; display: block;" />
+    <p id="message"></p>
+    <script>
+        var isGifDisplayed = false;
+        function displayMessage() {
+            var gif = document.getElementById("gif");
+            var message = document.getElementById("message");
+            if (!isGifDisplayed) {
+                message.innerHTML = "Sending you lots of love and positive energy,Sraboni !!!";
+                gif.src = "tenor.gif"; // replace with your gif URL
+                gif.style.display = "block";
+                isGifDisplayed = true;
+            } else {
+                message.innerHTML = "";
+                gif.style.display = "none";
+                isGifDisplayed = false;
+            }
+        }
+    </script>
+</body>
+</html>
